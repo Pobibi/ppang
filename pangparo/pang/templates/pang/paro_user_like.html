@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/paro_user_like.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="topmenu"> 
+            <ul> 
+                <li><a href="{% url 'pang' %}"><img id="topmenu_logo" src="{% static 'img/logo.png' %}"></a></li>
+                <li>
+                    <div id="serach_">
+                    <input type="text" class="searchTerm" placeholder="search...">
+                    <button type="submit" class="searchButton"></button> 
+                    </div>
+                </li>
+                    <div id="user_like">
+                <li><a href="{% url 'userlike' %}"><img src="{% static 'img/heart.png' %}"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'img/user.png' %}"></a></li>
+                    </div>
+                
+            </ul> 
+        </nav>
+    </div>
+    <div class="div_column">
+        <nav class="submenu"> 
+            <ul> 
+                <li class="menuLink">LIKE</li>  
+            </ul> 
+        </nav>
+
+    </div> 
+</body>
+</html>

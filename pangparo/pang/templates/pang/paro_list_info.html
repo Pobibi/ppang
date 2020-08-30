@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/paro_list_info.css' %}">
+    
+</head>
+<body>
+    <!--상단바-->
+   <div class="wrapper">
+        <nav class="topmenu"> 
+            <ul> 
+                <li><a href="{% url 'pang' %}"><img id="topmenu_logo" src="{% static 'img/logo.png' %}"></a></li>
+                <li>
+                    <div id="serach_">
+                    <input type="text" class="searchTerm" placeholder="search...">
+                    <button type="submit" class="searchButton"></button> 
+                    </div>
+                </li>
+                    <div id="user_like">
+                <li><a href="{% url 'userlike' %}"><img src="{% static 'img/heart.png' %}"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'img/user.png' %}"></a></li>
+                    </div>
+                
+            </ul> 
+        </nav>
+    </div>
+    <!--메뉴바-->
+    <div class="div_column">
+        <nav class="submenu"> 
+            <ul> 
+                <li><a class="menuLink" href="#">ALL</a></li> 
+                <li><a class="menuLink" href="#">BRAED</a></li> 
+                <li><a class="menuLink" href="#">CAKE</a></li>
+                <li><a class="menuLink" href="#">SANDWICH/SALAD</a></li> 
+                <li><a class="menuLink" href="#">DESSERT/SNACKS</a></li>  
+            </ul> 
+        </nav>
+
+    </div>
+
+     <!--상품 이미지-->
+    <div>
+
+
+
+    </div>
+
+    <!--상품 정보-->
+    <div class="listinfo">
+        <table>
+            <tr><td colspan="3"><p style="font-size: 35px; font-weight: bold;">빵 이름</p></td></tr>
+            <tr><td>빵 매장</td><td>매장 주소</td><td>매장 번호</td></tr>
+            <tr><td colspan="3"><span>재고수</span></td></tr>
+            <tr><td colspan="3"><span style="color: rgb(192, 57, 43);">3</span></td></tr>
+            <tr><td colspan="3"><span style="font-weight: 300;">영양정보</span></td></tr>
+            <tr><td colspan="3"><hr></td></tr>
+            <tr><td colspan="3"></td></tr>
+            <tr><td colspan="3"><span style="font-weight: 300;">알레르기 정보</span></td></tr>
+            <tr><td colspan="3"><hr></td></tr>
+            <tr><td colspan="3"></td></tr>
+
+        </table>
+    </div>
+</body>
+</html>

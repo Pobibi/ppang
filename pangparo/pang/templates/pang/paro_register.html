@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/paro_reigster.css' %}">
+
+<body>
+    <div class="wrapper">
+        <nav class="topmenu"> 
+            <ul> 
+                <li><a href="{% url 'pang' %}"><img id="topmenu_logo" src="{% static 'img/logo.png' %}"></a></li>
+                <li>
+                    <div id="serach_">
+                    <input type="text" class="searchTerm" placeholder="search...">
+                    <button type="submit" class="searchButton"></button> 
+                    </div>
+                </li>
+                    <div id="user_like">
+                <li><a href=""><img src="{% static 'img/heart.png' %}"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'img/user.png' %}"></a></li>
+                    </div>
+                
+            </ul> 
+        </nav>
+    </div>
+    <div class="div_column">
+        <nav class="submenu"> 
+            <ul> 
+                <li class="menuLink">REGISTER</li>  
+            </ul> 
+        </nav>
+
+    </div> 
+    {% block content %}
+    <div class="div_column">
+    <center>
+        <form action="{% url 'postcreate' %}" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <table class="register">
+                <tr><h2 id="register_font">상품등록</h2></tr>
+                <tr></tr>
+                <tr><td>빵 이름 <span>*필수</span></td></tr>
+                <tr><td><input type="text" placeholder="이름을 입력해주세요" name='pangname'></td></tr>
+                <tr><td>빵 카테고리 <span>*필수</span></td></tr>
+                <tr><td>
+                    <input type="checkbox" name='pangcate' value='braed'>BREAD
+                    <input type="checkbox" name='pangcate' value='cake'>CAKE
+                    <input type="checkbox" name='pangcate' value='sandwich_salad'>SANWICH/SALAD
+                    <input type="checkbox" name='pangcate' value='dessert_snacks'>DESSERT/SNACKS</td></tr>
+                <tr><td>재고 수 <span>*필수</span></td></tr>
+                <tr><td><input type="text" placeholder="재고수를 입력해주세요" name="pangcount"></td></tr>
+                <tr><td>이미지 <span>*필수</span></td></tr>
+                <tr><td><span>이미지는 1:1 사이즈로 업로드 해주세요 *200X200 권장합니다</span></td></tr>
+                <tr><td><input type="image" style="border:none" name="pangimg"></td></tr>
+                <tr><td>영양정보</td></tr>
+                <tr><td><input type="text" style="height: 150px;" name="panginfo"></td></tr>
+                <tr><td>알레르기 정보</td></tr>
+                <tr><td><input type="text" style="height: 150px;" name="pangal"></td></tr>
+                <tr><td><button type="submit">상품등록</button></td></tr>
+            </table>
+       
+        </form>
+    </center>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

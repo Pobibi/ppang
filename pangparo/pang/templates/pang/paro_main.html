@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/paro_main.css' %}">
+    
+</head>
+<body>
+    <!--header-->
+   <div class="wrapper">
+        <nav class="topmenu"> 
+            <ul> 
+                <li><a href=""><img id="topmenu_logo" src="{% static 'img/logo.png' %}"></a></li>
+                <li>
+                    <div id="serach_">
+                    <input type="text" class="searchTerm" placeholder="search...">
+                    <button type="submit" class="searchButton"></button> 
+                    </div>
+                </li>
+                    <div id="user_like">
+                <li><a href=""><img src="{% static 'img/heart.png' %}"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'img/user.png' %}"></a></li>
+                    </div>
+                
+            </ul> 
+        </nav>
+    </div>
+    <div class="div_column">
+        <nav class="submenu"> 
+            <ul> 
+                <li><a class="menuLink" href="#">ALL</a></li> 
+                <li><a class="menuLink" href="#">BRAED</a></li> 
+                <li><a class="menuLink" href="#">CAKE</a></li>
+                <li><a class="menuLink" href="#">SANDWICH/SALAD</a></li> 
+                <li><a class="menuLink" href="#">DESSERT/SNACKS</a></li>  
+            </ul> 
+        </nav>
+
+    </div>
+    <div class="div_column">
+    <center>
+    <table cols="4" class="list">
+        <tr>
+        {% for panglist in panglists %}
+             <td><img src="{{ panglist.pangimg.url }}" alt="image/" width="300">
+             <h3>{{panglist.pangname}}</h3>  
+             재고수 <span style="color:rgb(192, 57, 43)">{{panglist.pangcount}}</span></td>
+        {% endfor %}
+        </tr> 
+    </table>  
+   </center>    
+</div>
+</body>
+</html>
